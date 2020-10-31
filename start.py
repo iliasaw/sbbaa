@@ -13,7 +13,6 @@ from PIL import Image
 from io import BytesIO
 import sqlite3
 import yaml
-import game
 
 from config import instar_token, instar_info, category_name, seat_amount, channel_names, role_names, format_time
 
