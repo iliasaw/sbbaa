@@ -24,7 +24,6 @@ import googletrans
 import socket
 import psutil as ps
 import time 
-import pyshorteners
 
 
 
@@ -55,13 +54,7 @@ connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
 
-def get_lang(guild, ru_text:str, en_text:str):
-	if cursor.execute(f"SELECT lang FROM servers WHERE id = {guild.id}").fetchone()[0] == 'ru':
-		return ru_text
-	elif cursor.execute(f"SELECT lang FROM servers WHERE id = {guild.id}").fetchone()[0] == 'en':
-		return en_text
-	else:
-		return en_text
+
 
 class allсommands(commands.Cog):
 	def __init__(self, bot):
