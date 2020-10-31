@@ -1,12 +1,9 @@
 import json
 
 # Getting the token from json file
-with open("./token.json", "r") as f:
-    json_data = json.load(f)
 
-instar_token = json_data["token"]
 
-instar_info = """Hello, Я Хагрид. Я сделал это уно. В этом уно может участвовать максимум 8 человек.
+instar_info = """Hello. В этом уно может участвовать максимум 8 человек.
 Бот создаёт сначало комнаты и роли, а также добовляет эмодзи на сервер. Выбор карты в боте необычный к примеру чтобы выбрать карту: **красная 6**, то надо написать: `r 6`.
 Если вы незнаете правила то зайдите на этот сайт: https://igorek.info/kartochnaya-igra-uno-pravila-igryi-v-uno/""".expandtabs(2)
 
