@@ -22,12 +22,9 @@ from googletrans import Translator
 from time import sleep
 import googletrans
 import socket
-from mcstatus import MinecraftServer
 import psutil as ps
 import time 
-from itertools import cycle
 import pyshorteners
-from bs4 import BeautifulSoup as BS
 
 
 
