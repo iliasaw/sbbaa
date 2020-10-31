@@ -77,3 +77,4 @@ xdis==4.6.1
 yandex-music==0.0.16
 yarl==1.4.2
 youtube-dl==2020.9.20
+PyNaCl
