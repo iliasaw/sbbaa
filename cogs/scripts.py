@@ -6,8 +6,6 @@ import requests
 import googletrans
 from googletrans import Translator
 from datetime import timedelta
-import colorama
-from colorama import Fore, Back, Style
 
 
 class scripts(commands.Cog):
