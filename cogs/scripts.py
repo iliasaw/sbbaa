@@ -47,6 +47,8 @@ class scripts(commands.Cog):
 			description=f"**Информация о сервере:**\n\nСервер - {guild.name}\nID сервера - {guild.id}\nВладелец сервера - {guild.owner}",
 		)
 		await channel.send(embed=j_e)
+	
+	embedadda = embed2.set_author(name= 'Сервер бота', url='https://discord.gg/JDUjTFS')
 
 
 
