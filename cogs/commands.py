@@ -72,9 +72,8 @@ class allсommands(commands.Cog):
 			'`-panda` **- Показывет панду**\n `-bird` **- Показывает птичку**\n `-fox` **- Показывает лисичку**\n `-cat` **- Показать котика**\n `-koala` **- Показать коалу**\n `-dog` **- Показать собачку**\n `-invert [@user]` **- Инвертировать**\n `-wasted [@user]` **- Арестовать**\n `-greyscale` **-Чёрно-Белое**', color=0xa400fc)
 		embed2 = discord.Embed(title='**Основные :bulb:**', description='`-botinfo` **- Показывает информацию о боте**\n `-today` **- Показывает события сегодняшнего дня в мировой истории** \n `-wiki (text)` **- Показывает самую популярную статью в википедии по запросу**\n `-news` **- Показывает нынешние важные события во всём мире**\n `-facts` **- Показывает интересные факты из википедии**\n `-image` **- Показывает изображение дня**\n'
 			'`-translate (lang) (text)` **- Перевести сообщение**\n `-avatar [@user]` **- Показывает аватар**\n`-server` **- показывает информацию о сервере\n `-suggest (idea)` **- Предложить идею боту**', color=0xa400fc)
-		embed3 = discord.Embed(title='**Модерирование**', description='`-mute (@user) [10m] [reason]` **- Замутить человека**\n`-unmute @user` **- Размутить человека**\n `-warn (@user) (reason)` **- Выдать варн человеку**\n `-unwarn (@user) (id)` **- Снять варн у человека**', color=0xa400fc)
 
-		embeds = [embed, embed1, embed2, embed3]
+		embeds = [embed, embed1, embed2]
 
 		message = await ctx.send(embed=embed)
 		page = Paginator(self.bot, message, only=ctx.author, embeds=embeds, time_stamp=False)
