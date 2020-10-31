@@ -20,7 +20,7 @@ import Uno
 
 
 
-bot = commands.Bot(commands.when_mentioned_or("-"), intents = discord.Intents.all())
+bot = commands.Bot(commands.when_mentioned_or("#"), intents = discord.Intents.all())
 
 bot.remove_command("help")
 
