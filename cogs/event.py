@@ -24,7 +24,6 @@ import googletrans
 import socket
 import psutil as ps
 import time 
-import pyshorteners
 import os
 import yaml
 
