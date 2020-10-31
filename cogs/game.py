@@ -14,7 +14,7 @@ from random import choice
 import datetime
 import time
 
-from config import instar_token, instar_info, category_name, seat_amount, channel_names, role_names, format_time
+from config import instar_info, category_name, seat_amount, channel_names, role_names, format_time
 
 import Uno
 
