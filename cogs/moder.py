@@ -97,8 +97,6 @@ class Moder(commands.Cog):
 		mute_role = discord.utils.get(ctx.message.guild.roles, name = 'Muted')
 		if not member and not arg:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Правильное использование команды: `unmute @пользователь причина`', color=0xa400fc))
-		if member.top_role > ctx.guild.me.top_role:
-			return await ctx.send(embed = discord.Embed(description = f'**:warning: Я не могу размутить {member.mention}, так как его роль выше моей!**', color=0xa400fc))
 		if mute_role.position > ctx.guild.me.top_role.position:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Я не могу размутить {member.mention}, так как роль мута выше моей!**', color=0xa400fc))
 		now_date = datetime.datetime.now()
@@ -129,7 +127,7 @@ class Moder(commands.Cog):
 		if member.id == ctx.guild.me.id:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Я не могу кикнуть самого себя!**', color=0xa400fc))
 		if ctx.author.top_role.position < member.top_role.position:
-			return await ctx.send(embed = discord.Embed(description = f'**:warning: Эм... Это троллинг? Ты не можешь кикнуть человека с позицией выше твоей!**', color=0xa400fc))
+			return await ctx.send(embed = discord.Embed(description = f'**:warning: Ты не можешь кикнуть человека с позицией выше твоей!**', color=0xa400fc))
 		if member.id == ctx.author.id:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Напомню, суицид - это не выход!**', color=0xa400fc))
 		if member.top_role > ctx.guild.me.top_role:
