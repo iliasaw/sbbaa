@@ -1,0 +1,32 @@
+function CreateESPPart(BodyPart,color)
+local ESPPartparent = BodyPart
+local Box = Instance.new("BoxHandleAdornment")
+Box.Size = BodyPart.Size + Vector3.new(0.1, 0.1, 0.1)
+Box.Name = "ESPPart"
+Box.Adornee = ESPPartparent
+Box.Color3 = color
+Box.AlwaysOnTop = true
+Box.ZIndex = 5
+Box.Transparency = 0.8
+Box.Parent = BodyPart
+end
+
+local zombs = workspace.Baddies:getChildren()
+for i=1,#zombs do 
+local bodypart = zombs[i]:getChildren()
+for i=1,#bodypart do 
+if bodypart[i].ClassName == "Part" then
+CreateESPPart(bodypart[i], Color3.fromRGB(0,255,0))
+end
+end
+end
+
+workspace.Baddies.ChildAdded:Connect(function(zomb)
+wait(1)
+local bodypart = zomb:getChildren()
+for i=1,#bodypart do 
+if bodypart[i].ClassName == "Part" then
+CreateESPPart(bodypart[i], Color3.fromRGB(0,255,0))
+end
+end
+end)

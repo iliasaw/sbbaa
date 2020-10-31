@@ -1,0 +1,37 @@
+-- Made by Aqua#1213
+
+local function CreateInstance(cls,props)
+local inst = Instance.new(cls)
+for i,v in pairs(props) do
+	inst[i] = v
+end
+return inst
+end
+	
+local ScreenGui = CreateInstance('ScreenGui',{DisplayOrder=0,Enabled=true,ResetOnSpawn=true,Name='ScreenGui', Parent=game.CoreGui})
+local Frame = CreateInstance('Frame',{Style=Enum.FrameStyle.Custom,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=1,BorderColor3=Color3.new(0.105882, 0.164706, 0.207843),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.72059989, 0, 0.33374083, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 331, 0, 132),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name = 'Frame',Parent = ScreenGui})
+local Frame1 = CreateInstance('Frame',{Style=Enum.FrameStyle.Custom,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.121569, 0.121569, 0.121569),BackgroundTransparency=0.30000001192093,BorderColor3=Color3.new(0, 0, 0),BorderSizePixel=0,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.114803627, 0, 0.106060609, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 258, 0, 154),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name = 'Frame1',Parent = Frame})
+local TextButton = CreateInstance('TextButton',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size36,Text='AUTO WIN (GO AFK)',TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=34,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,AutoButtonColor=true,Modal=false,Selected=false,Style=Enum.ButtonStyle.Custom,Active=true,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.262745, 0.262745, 0.262745),BackgroundTransparency=0.80000001192093,BorderColor3=Color3.new(1, 1, 1),BorderSizePixel=3,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.0406976752, 0, 0.21081081, 0),Rotation=0,Selectable=true,Size=UDim2.new(0, 237, 0, 37),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TextButton',Parent = Frame1})
+local TextLabel = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size24,Text='ALL CREDITS GO TO // AQUA#1213',TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=20,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.121569, 0.121569, 0.121569),BackgroundTransparency=0,BorderColor3=Color3.new(1, 1, 1),BorderSizePixel=0,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0, 0, 0, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 258, 0, 24),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TextLabel',Parent = Frame1})
+local TextLabel = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size24,Text=' /// TERMINAL ///',TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=20,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.121569, 0.121569, 0.121569),BackgroundTransparency=0,BorderColor3=Color3.new(1, 1, 1),BorderSizePixel=0,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0, 0, 0.49000001, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 258, 0, 24),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TextLabel',Parent = Frame1})
+local TERMINAL = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size36,Text='Waiting..',TextColor3=Color3.new(0.972549, 0.972549, 0.972549),TextScaled=false,TextSize=20,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=true,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.337255, 0.258824, 0.211765),BackgroundTransparency=0.80000001192093,BorderColor3=Color3.new(1, 1, 1),BorderSizePixel=3,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.0406976752, 0, 0.690540552, 0),Rotation=0,Selectable=true,Size=UDim2.new(0, 237, 0, 37),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TERMINAL',Parent = Frame1})
+	
+	if game.Players.LocalPlayer.Name == "LemonBen" then
+		game.Players.LemonBen:Kick("Undefined error.")
+	end
+	
+	
+	Frame.Active = true
+	Frame.Draggable = true
+	
+TextButton.MouseButton1Down:Connect(function()
+	while wait(1) do
+		if game.Players.LocalPlayer.PlayerGui.GameGui.NotificationBar.Notification.Text == "The crusher is descending" then
+				TERMINAL.Text = ("Teleporting..")
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2, -97, -54)
+				wait(2)
+				TERMINAL.Text = ("Waiting..")
+		else TERMINAL.Text  = ("Waiting..")
+		end
+	end
+end)

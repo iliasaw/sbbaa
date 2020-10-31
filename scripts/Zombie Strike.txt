@@ -1,0 +1,10 @@
+_G.run = true
+while _G.run do
+for i,v in pairs(game:GetService("Workspace").Zombies:GetChildren()) do 
+if v:findFirstChild("Head") then
+v.Head.Anchored = true 
+v.Head.CFrame = game.Players.LocalPlayer.Character.Head.CFrame*CFrame.new(2,3,-10)
+end
+end
+wait() 
+end
