@@ -12,7 +12,6 @@ import os
 from PIL import Image
 from io import BytesIO
 import sqlite3
-from captcha.image import ImageCaptcha
 import yaml
 import game
 
