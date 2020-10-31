@@ -22,23 +22,18 @@ from googletrans import Translator
 from time import sleep
 import googletrans
 import socket
-from mcstatus import MinecraftServer
 import psutil as ps
 import time 
 from itertools import cycle
 import pyshorteners
-from bs4 import BeautifulSoup as BS
 import os
 import yaml
-import game
-from game import game
 
 class event(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
 	@commands.command()
-	@commands.has_any_role(762695458920726528, 632650506707140618)
 	async def флаги(self, ctx):
 		with open('flags.json','r',encoding='utf8') as f: #открываем файл, который будет возле файла бота, и ставим кодировку utf-8 чтобы кириллица нормально отображалась и воспринималась
 			flags = json.load(f) #получаем содержимое
