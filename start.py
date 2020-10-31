@@ -16,7 +16,7 @@ from captcha.image import ImageCaptcha
 import yaml
 import game
 
-from config import instar_token, instar_info, category_name, seat_amount, channel_names, role_names, format_time
+from config import instar_info, category_name, seat_amount, channel_names, role_names, format_time
 
 import Uno
 
@@ -402,4 +402,4 @@ async def on_command_error(ctx, error):
 async def block_dms(ctx):
 	return ctx.guild is not None
 
-bot.run(instar_token)
+bot.run(os.getenv("TOKEN"))
