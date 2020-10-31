@@ -444,10 +444,10 @@ class allсommands(commands.Cog):
 			members_count += len(guild.members)
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
-							   description="Информация о боте **EventBot**.\nБот был написан для различных игр по типу уно!",
+							   description="Информация о боте **SplashBot**.\nБот был написан для сервера **Splash**!",
 							   color=0xa400fc)
 		embed1.add_field(name=f'Бота создали:', value="<@689076222386503770>", inline=True)  # Создает строку
-		embed1.add_field(name=f'Самый лучший человек:', value="<@600583908534517762>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Самый лучший человек:', value="<@744622042829029456>", inline=True)  # Создает строку
 		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
 		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
@@ -455,8 +455,8 @@ class allсommands(commands.Cog):
 		embed1.add_field(name=f'Участников:', value=f"{members_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
-		embed1.add_field(name=f'Сервер Влюкса:',
-						 value="[Тык](https://discord.gg/S4hpckh)",
+		embed1.add_field(name=f'Сервер Splash:',
+						 value="[Тык](https://discord.gg/RFcNDmTcda)",
 						 inline=True)  # Создает строку
 
 		# ==================
