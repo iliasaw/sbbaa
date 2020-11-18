@@ -13,6 +13,7 @@ from PIL import Image
 from io import BytesIO
 import sqlite3
 import yaml
+from PIL import Image,ImageFilter,ImageDraw,ImageFont
 
 from config import instar_info, category_name, seat_amount, channel_names, role_names, format_time
 
@@ -130,7 +131,68 @@ async def translate(ctx, dest, *, txt: str):
 
 		await ctx.author.send(embed = embed)
 
-
+@bot.command(aliases=['certificate']) 
+async def sertifikat(ctx, member : discord.Member = None):
+	user = ctx.message.author if (member == None) else member
+	base = Image.open("ser.png").convert("RGBA")
+	txt = Image.new("RGBA", base.size, (255,255,255,0))
+	fnt = ImageFont.truetype("Monotype Corsiva.ttf", 25)
+	d = ImageDraw.Draw(txt)
+	if len(user.name) == 11:
+		d.text((150,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 4:
+		d.text((185,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 5:
+		d.text((185,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 6:
+		d.text((180,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 7:
+		d.text((175,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 8:
+		d.text((170,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 9:
+		d.text((165,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 10:
+		d.text((160,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 12:
+		d.text((155,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) > 12:
+		d.text((150,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
+	if len(user.name) == 3:
+		d.text((185,225), str(user.name), font = fnt, fill = (90,81,52))
+		out = Image.alpha_composite(base, txt)
+		out.save('user.png')
+		await ctx.send(file = discord.File(fp = 'user.png'))
 
 @bot.command()
 @commands.check(is_owner)
