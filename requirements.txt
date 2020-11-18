@@ -80,4 +80,4 @@ youtube-dl==2020.9.20
 PyNaCl
 humanize
 datetime
-wavelink
+Pillow
