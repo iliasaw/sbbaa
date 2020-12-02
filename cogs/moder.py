@@ -12,7 +12,7 @@ class Moder(commands.Cog):
 		self.cog_name = ["Модераторские"]
 
 	@commands.command()
-	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286)
+	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def mute(ctx, member: discord.Member, arg: str, *, reason = None):
 		await ctx.message.delete()
 		now_date = datetime.datetime.now()
@@ -92,7 +92,7 @@ class Moder(commands.Cog):
 		await member.remove_roles(mute_role)
 	
 	@commands.command(pass_context = True)
-	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286)
+	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def unmute(ctx, member: discord.Member, *, reason = None):
 		mute_role = discord.utils.get(ctx.message.guild.roles, name = 'Muted')
 		if not member and not arg:
@@ -117,7 +117,7 @@ class Moder(commands.Cog):
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Данный пользователь, {member.mention}, не замучен!**', color=0xa400fc))
 	
 	@commands.command()
-	@commands.has_any_role(764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286)
+	@commands.has_any_role(764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def kick(ctx, member: discord.Member, *, reason = None):
 		await ctx.message.delete()
 		if not member:
