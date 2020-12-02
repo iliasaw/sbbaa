@@ -236,12 +236,20 @@ class allсommands(commands.Cog):
 		coin_win = 'Орёл'
 
 		if coins_r == coin_win:
-			await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
-				Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+			if ctx.author.id == 764776986819821569:
+				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
+					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+			else:
+				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
+					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
 
 		if coins_r != coin_win:
-			await ctx.send(embed = discord.Embed(description= f''':thumbsdown:  {ctx.author.mention}, проиграл! 
-				Тебе не повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+			if ctx.author.id == 764776986819821569:
+				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
+					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+			else:
+				await ctx.send(embed = discord.Embed(description= f''':thumbsdown:  {ctx.author.mention}, проиграл! 
+					Тебе не повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
 
 	@commands.command()
 	async def sas(self, ctx, *, arg):
