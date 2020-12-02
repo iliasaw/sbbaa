@@ -454,7 +454,7 @@ class allсommands(commands.Cog):
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
 							   description="Информация о боте **SplashBot**.\nБот был написан для сервера **Splash**!",
 							   color=0xa400fc)
-		embed1.add_field(name=f'Бота создали:', value="<@689076222386503770>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Бота создали:', value="<@764776986819821569>", inline=True)  # Создает строку
 		embed1.add_field(name=f'Самый лучший человек:', value="<@744622042829029456>", inline=True)  # Создает строку
 		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
