@@ -238,7 +238,7 @@ class allсommands(commands.Cog):
 		if coins_r == coin_win:
 			if ctx.author.id == 764776986819821569:
 				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
-					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+					Тебе повезло у тебя: **`Орёл`**''', color = 0xa400fc))
 			else:
 				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
 					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
@@ -246,7 +246,7 @@ class allсommands(commands.Cog):
 		if coins_r != coin_win:
 			if ctx.author.id == 764776986819821569:
 				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
-					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
+					Тебе повезло у тебя: **`Орёл`**''', color = 0xa400fc))
 			else:
 				await ctx.send(embed = discord.Embed(description= f''':thumbsdown:  {ctx.author.mention}, проиграл! 
 					Тебе не повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
