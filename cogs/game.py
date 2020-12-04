@@ -56,7 +56,6 @@ class GameCog(commands.Cog):
 	@commands.command(aliases=["старт"],
 		description="Начать игру в уно",
 		usage="start [Ничего]")
-	@commands.bot_has_permissions(manage_channels=True, manage_emojis=True, manage_roles=True, manage_messages=True)
 	@check_seats()
 	async def start(self, ctx):
 		user_lst = [ctx.author]
