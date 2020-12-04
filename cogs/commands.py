@@ -422,21 +422,73 @@ class allсommands(commands.Cog):
 
 
 		
-	@commands.command(aliases=['бот', 'bot', 'ботинфо'])
-	async def botinfo(self, ctx):
-		
+	@commands.command(aliases=["bot", "botinfo", "ботинфо"])
+	async def _bot(self, ctx):
+		await ctx.message.delete()
+ 
+		members_count = 0
 		guild_count = len(self.bot.guilds)
-		member_count = len(self.bot.users)
-		embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **WinterBot**.\nБот был написан для сервера **Winter**", color = 0xa400fc)
-		embed.add_field(name=f'**Бота создал:**', value="<@764776986819821569>", inline=True)  # Создает строку
-		embed.add_field(name=f'**Самый лучший человек:**', value="<@369886134861561858>", inline=True)  # Создает строку
-		embed.add_field(name=f'**Лицензия:**', value="CC BY-SA-NC", inline=True)  # Создает строку
-		embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=True)  # Создает строку
-		embed.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
-		embed.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
-		embed.add_field(name=f'**Сервер Winter:**', value="[Тык](https://discord.gg/jNuEDPHhfX)", inline=True)  # Создает строку
-		embed.set_thumbnail( url = self.bot.user.avatar_url)
-		await ctx.send(embed=embed)
+ 
+		for guild in self.bot.guilds:
+			members_count += len(guild.members)
+ 
+		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
+							   description="Информация о боте **WinterBpt**.\nБот был написан для сервера Winter!",
+							   color=0xa400fc)
+		embed1.add_field(name=f'Бота создал:', value="<@764776986819821569>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Самый Лучший Человек:', value="<@369886134861561858>", inline=True)  # Создает строку
+		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
+		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
+		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
+		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
+		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
+		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
+		embed1.add_field(name=f'Сервер Winter:', value="[Тык](https://discord.gg/jNuEDPHhfX)",
+						 inline=True)  # Создает строку
+		embed1.set_thumbnail(url=self.bot.user.avatar_url)
+ 
+		# ==================
+ 
+		mem = ps.virtual_memory()
+		ping = self.bot.latency
+ 
+		ping_emoji = "🟩🔳🔳🔳🔳"
+		ping_list = [
+			{"ping": 0.00000000000000000, "emoji": "🟩🔳🔳🔳🔳"},
+			{"ping": 0.10000000000000000, "emoji": "🟧🟩🔳🔳🔳"},
+			{"ping": 0.15000000000000000, "emoji": "🟥🟧🟩🔳🔳"},
+			{"ping": 0.20000000000000000, "emoji": "🟥🟥🟧🟩🔳"},
+			{"ping": 0.25000000000000000, "emoji": "🟥🟥🟥🟧🟩"},
+			{"ping": 0.30000000000000000, "emoji": "🟥🟥🟥🟥🟧"},
+			{"ping": 0.35000000000000000, "emoji": "🟥🟥🟥🟥🟥"}
+		]
+		for ping_one in ping_list:
+			if ping <= ping_one["ping"]:
+				ping_emoji = ping_one["emoji"]
+				break
+ 
+		embed2 = discord.Embed(title='Статистика Бота', color=0xa400fc)
+ 
+		embed2.add_field(name='Использование CPU',
+						 value=f'В настоящее время используется: {ps.cpu_percent()}%',
+						 inline=True)
+ 
+		embed2.add_field(name='Использование RAM',
+						 value=f'Доступно: {bytes2human(mem.available, "system")}\n'
+							   f'Используется: {bytes2human(mem.used, "system")} ({mem.percent}%)\n'
+							   f'Всего: {bytes2human(mem.total, "system")}',
+						 inline=True)
+ 
+		embed2.add_field(name='Пинг Бота',
+						 value=f'Пинг: {ping * 1000:.0f}ms\n'
+							   f'`{ping_emoji}`',
+						 inline=True)
+ 
+		embeds = [embed1, embed2]
+ 
+		message = await ctx.send(embed=embed1)
+		page = Paginator(self.bot, message, only=ctx.author, embeds=embeds, time_stamp=False)
+		await page.start()
 
 	@commands.command(aliases=["rps", "кнб", "knb"],
 		description="Камень, ножницы, бумага",
