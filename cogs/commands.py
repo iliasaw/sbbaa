@@ -447,6 +447,7 @@ class allсommands(commands.Cog):
 		embed1.add_field(name=f'Сервер Winter:',
 						 value="[Тык](https://discord.gg/jNuEDPHhfX)",
 						 inline=True)  # Создает строку
+		await ctx.send(f"{ctx.author.mention} Я работаю!!")
 
 		# ==================
  
@@ -467,6 +468,7 @@ class allсommands(commands.Cog):
 			if ping <= ping_one["ping"]:
 				ping_emoji = ping_one["emoji"]
 				break
+		await ctx.send(f"{ctx.author.mention} Я работаю!!!")
  
 		embed2 = discord.Embed(title='Статистика Бота', color=0xa400fc)
  
@@ -484,6 +486,7 @@ class allсommands(commands.Cog):
 						 value=f'Пинг: {ping * 1000:.0f}ms\n'
 							   f'{ping_emoji}',
 						 inline=True)
+		await ctx.send(f"{ctx.author.mention} Я работаю!!!!")
  
  
 		embeds = [embed1, embed2]
