@@ -434,7 +434,7 @@ class allсommands(commands.Cog):
 			members_count += len(guild.members)
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
-							   description="Информация о боте **WinterhBot**.\nБот был написан для сервера **Winter**!",
+							   description="Информация о боте **WinterBot**.\nБот был написан для сервера **Winter**!",
 							   color=0xa400fc)
 		embed1.add_field(name=f'Бота создали:', value="<@764776986819821569>", inline=True)  # Создает строку
 		embed1.add_field(name=f'Самый лучший человек:', value="<@369886134861561858>", inline=True)  # Создает строку
