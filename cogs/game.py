@@ -266,8 +266,6 @@ class GameCog(commands.Cog):
 	@commands.command(aliases=["reset", "рестарт"],
 		description="Удалить всё что связано с уно",
 		usage="reset [Ничего]")
-	@commands.has_permissions(manage_channels=True, manage_emojis=True, manage_roles=True)
-	@commands.bot_has_permissions(manage_channels=True, manage_emojis=True, manage_roles=True)
 	async def __reset(self, ctx):
 		async with ctx.channel.typing():
 			for name in Uno.emojis.values():
