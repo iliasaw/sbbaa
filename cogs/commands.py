@@ -68,8 +68,8 @@ class allсommands(commands.Cog):
 	@commands.command(aliases=['help', 'хелп'])
 	async def shelp(self, ctx):
 		embed = discord.Embed(title='**Помощь**', description='***Навигация по секретным командам :gear:\n () - Обязательные параметры\n [] - Необязательные параметры***\n *P.S: Листай с помощью эмодзи*', color=0xa400fc)
-		embed1 = discord.Embed(title='**Развлечение :balloon:**', description='\n `#ttt (@user)` **- Сыграть с человеком в крестики нолики**\n `#short (url)` **- Сокращение ссылки**\n `#coin` **- Подкинуть монетку**\n `#rand (number1) (number2)` **- Рандомайзер**\n `#caesar (arg)` **- Зашифровать шифром цезаря**\n `#reverse (text)` **- Зазеркалить слово**\n `#rps (arg)` **- Камень Ножницы Бумага**\n'
-			'`#panda` **- Показывет панду**\n `#bird` **- Показывает птичку**\n `#fox` **- Показывает лисичку**\n `#cat` **- Показать котика**\n `#koala` **- Показать коалу**\n `#dog` **- Показать собачку**\n `#invert [@user]` **- Инвертировать**\n `#wasted [@user]` **- Арестовать**\n `#greyscale` **-Чёрно-Белое**', color=0xa400fc)
+		embed1 = discord.Embed(title='**Развлечение :balloon:**', description='\n `#ttt (@user)` **- Сыграть с человеком в крестики нолики**\n `#coin` **- Подкинуть монетку**\n `#rand (number1) (number2)` **- Рандомайзер**\n `#caesar (arg)` **- Зашифровать шифром цезаря**\n `#reverse (text)` **- Зазеркалить слово**\n `#rps (arg)` **- Камень Ножницы Бумага**\n'
+			'`#panda` **- Показывет панду**\n `#bird` **- Показывает птичку**\n `#fox` **- Показывает лисичку**\n `#cat` **- Показать котика**\n `#koala` **- Показать коалу**\n `#dog` **- Показать собачку**\n `#invert [@user]` **- Инвертировать**\n `#wasted [@user]` **- Арестовать**\n `#greyscale [@user]` **- Чёрно-Белое**', color=0xa400fc)
 		embed2 = discord.Embed(title='**Основные :bulb:**', description='`#botinfo` **- Показывает информацию о боте**\n `#today` **- Показывает события сегодняшнего дня в мировой истории** \n `#wiki (text)` **- Показывает самую популярную статью в википедии по запросу**\n `#news` **- Показывает нынешние важные события во всём мире**\n `#facts` **- Показывает интересные факты из википедии**\n `#image` **- Показывает изображение дня**\n'
 			'`#translate (lang) (text)` **- Перевести сообщение**\n `#avatar [@user]` **- Показывает аватар**\n`#server` **- показывает информацию о сервере**\n `#suggest (idea)` **- Предложить идею боту**', color=0xa400fc)
 
@@ -209,19 +209,6 @@ class allсommands(commands.Cog):
 	 
 		await ctx.send(embed=embed)
 
-	@commands.command()
-	async def short(self, ctx, url : str = None):
-		if url is None:
-			await ctx.send(embed = discord.Embed(
-					title = "Короткий URL",
-					description = "Ошибка | Укажите ссылку которую хотите укоротить",
-					colour = discord.Color.red()
-				))
-		else:
-			shortener = pyshorteners.Shortener()
-			short_url = shortener.tinyurl.short(url)
-			await ctx.send(embed = discord.Embed(description= f"Ваша ссылка готова: " + short_url, color = 0xa400fc))
-
 
 	@commands.command(
 		aliases=["монетка", "орел-решка", "coin"],
@@ -250,11 +237,6 @@ class allсommands(commands.Cog):
 			else:
 				await ctx.send(embed = discord.Embed(description= f''':thumbsdown:  {ctx.author.mention}, проиграл! 
 					Тебе не повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
-
-	@commands.command()
-	async def sas(self, ctx, *, arg):
-		await ctx.send(f'{arg}')
-
 
 	@commands.command(
 		aliases=["rand", "рандом", "рандомайзер", "random", "randomizer"],
@@ -452,10 +434,10 @@ class allсommands(commands.Cog):
 			members_count += len(guild.members)
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
-							   description="Информация о боте **SplashBot**.\nБот был написан для сервера **Splash**!",
+							   description="Информация о боте **WinterhBot**.\nБот был написан для сервера **Winter**!",
 							   color=0xa400fc)
 		embed1.add_field(name=f'Бота создали:', value="<@764776986819821569>", inline=True)  # Создает строку
-		embed1.add_field(name=f'Самый лучший человек:', value="<@744622042829029456>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Самый лучший человек:', value="<@369886134861561858>", inline=True)  # Создает строку
 		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
 		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
@@ -463,8 +445,8 @@ class allсommands(commands.Cog):
 		embed1.add_field(name=f'Участников:', value=f"{members_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
-		embed1.add_field(name=f'Сервер Splash:',
-						 value="[Тык](https://discord.gg/RFcNDmTcda)",
+		embed1.add_field(name=f'Сервер Winter:',
+						 value="[Тык](https://discord.gg/jNuEDPHhfX)",
 						 inline=True)  # Создает строку
 
 		# ==================
