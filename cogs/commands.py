@@ -492,7 +492,9 @@ class allсommands(commands.Cog):
 		embeds = [embed1, embed2]
  
 		message = await ctx.send(embed=embed1)
+		await ctx.send(f"{ctx.author.mention} Я работаю!!!!!")
 		page = Paginator(self.bot, message, only=ctx.author, embeds=embeds, time_stamp=False)
+		await ctx.send(f"{ctx.author.mention} Я работаю!!!!!!!")
 		await page.start()
 
 	@commands.command(aliases=["rps", "кнб", "knb"],
