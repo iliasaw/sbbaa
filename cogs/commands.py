@@ -174,8 +174,7 @@ class allсommands(commands.Cog):
 			return
 
 	@commands.command(
-	aliases=['сервер', 'серверинфо'],
-	description="Информация о сервере")
+	aliases=['сервер', 'серверинфо'])
 	async def server(self, ctx):
 		members = ctx.guild.members
 		bots = len([m for m in members if m.bot])
@@ -188,7 +187,7 @@ class allсommands(commands.Cog):
 		alltext = len(ctx.guild.text_channels)
 		allroles = len(ctx.guild.roles)
 	 
-		embed = discord.Embed(title=f"{ctx.guild.name}", color=config.color, timestamp=ctx.message.created_at)
+		embed = discord.Embed(title=f"{ctx.guild.name}", color=0xa400fc, timestamp=ctx.message.created_at)
 		embed.set_thumbnail(url=ctx.guild.icon_url)
 	 
 		embed.add_field(name=f"Пользователей", value=f"<:user:771689279667699722> Участников: **{users}**\n"
