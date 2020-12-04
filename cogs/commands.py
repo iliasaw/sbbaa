@@ -420,36 +420,26 @@ class allсommands(commands.Cog):
 
 	
 
-	@commands.command(aliases=["bot", "бот", "botinfo", "ботинфо"],
-		description="Показывет информацию о боте",
-		usage="botnfo [Ничего]")
-	async def __bot(self, ctx):
-		await ctx.message.delete()
+
 		
-		await ctx.send(f"{ctx.author.mention} Я работаю!")
- 
+	@commands.command(aliases=['бот', 'bot', 'ботинфо'])
+	async def botinfo(self, ctx):
+		
 		guild_count = len(self.bot.guilds)
 		member_count = len(self.bot.users)
-		
- 
- 
-		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
-							   description="Информация о боте **WinterBot**.\nБот был написан для сервера **Winter**!",
-							   color=0xa400fc)
-		embed1.add_field(name=f'Бота создали:', value="<@764776986819821569>", inline=True)  # Создает строку
-		embed1.add_field(name=f'Самый лучший человек:', value="<@369886134861561858>", inline=True)  # Создает строку
-		embed1.add_field(name="    ", value=" ", inline=True)
-		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
-		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
-		embed1.add_field(name="    ", value=" ", inline=True)
-		embed1.add_field(name=f'Участников:', value=f"{member_count}", inline=True)  # Создает строку Пинг: {ping * 1000:.0f}ms
-		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
-		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
-		embed1.add_field(name=f'Сервер Winter:',
-						 value="[Тык](https://discord.gg/jNuEDPHhfX)",
-						 inline=True)  # Создает строку
-
-		await ctx.send(embed=embed1)
+		embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **WinterBot**.\nБот был написан для сервера **Winter**", color = 0xa400fc)
+		embed.add_field(name=f'**Бота создал:**', value="<@764776986819821569>", inline=True)  # Создает строку
+		embed.add_field(name=f'**Самый лучший человек:**', value="<@369886134861561858>", inline=True)  # Создает строку
+		embed.add_field(name="    ", value=" ", inline=True)
+		embed.add_field(name=f'**Лицензия:**', value="CC BY-SA-NC", inline=True)  # Создает строку
+		embed.add_field(name="    ", value=" ", inline=True)
+		embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=True)  # Создает строку
+		embed1.add_field(name=f'Участников:', value=f"{member_count}", inline=True)
+		embed.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
+		embed.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
+		embed.add_field(name=f'**Сервер Winter:**', value="[Тык](https://discord.gg/jNuEDPHhfX)", inline=True)  # Создает строку
+		embed.set_thumbnail( url = self.bot.user.avatar_url)
+		await ctx.send(embed=embed)
 
 	@commands.command(aliases=["rps", "кнб", "knb"],
 		description="Камень, ножницы, бумага",
