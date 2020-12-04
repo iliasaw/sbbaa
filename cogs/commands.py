@@ -481,7 +481,7 @@ class allсommands(commands.Cog):
  
 		embed2.add_field(name='Пинг Бота',
 						 value=f'Пинг: {ping * 1000:.0f}ms\n'
-							   f'`{ping_emoji}`',
+							   f'{ping_emoji}',
 						 inline=True)
  
 		embeds = [embed1, embed2]
