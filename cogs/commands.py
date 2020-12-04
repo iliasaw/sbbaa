@@ -431,19 +431,6 @@ class allсommands(commands.Cog):
 		guild_count = len(self.bot.guilds)
 		member_count = len(self.bot.users)
 		
-		mem = ps.virtual_memory()
-		ping = self.bot.latency
- 
-		ping_emoji = "🟩🔳🔳🔳🔳"
-		ping_list = [
-			{"ping": 0.00000000000000000, "emoji": "🟩🔳🔳🔳🔳"},
-			{"ping": 0.10000000000000000, "emoji": "🟧🟩🔳🔳🔳"},
-			{"ping": 0.15000000000000000, "emoji": "🟥🟧🟩🔳🔳"},
-			{"ping": 0.20000000000000000, "emoji": "🟥🟥🟧🟩🔳"},
-			{"ping": 0.25000000000000000, "emoji": "🟥🟥🟥🟧🟩"},
-			{"ping": 0.30000000000000000, "emoji": "🟥🟥🟥🟥🟧"},
-			{"ping": 0.35000000000000000, "emoji": "🟥🟥🟥🟥🟥"}
-		]
  
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
@@ -453,7 +440,6 @@ class allсommands(commands.Cog):
 		embed1.add_field(name=f'Самый лучший человек:', value="<@369886134861561858>", inline=True)  # Создает строку
 		embed1.add_field(name="    ", value=" ", inline=True)
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
-		embed1.add_field(name=f'Пинг:', value="{ping * 1000:.0f}ms\n {ping_emoji}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
 		embed1.add_field(name="    ", value=" ", inline=True)
 		embed1.add_field(name=f'Участников:', value=f"{member_count}", inline=True)  # Создает строку Пинг: {ping * 1000:.0f}ms
