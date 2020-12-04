@@ -444,10 +444,6 @@ class allсommands(commands.Cog):
 			{"ping": 0.30000000000000000, "emoji": "🟥🟥🟥🟥🟧"},
 			{"ping": 0.35000000000000000, "emoji": "🟥🟥🟥🟥🟥"}
 		]
-		for ping_one in ping_list:
-			if ping <= ping_one["ping"]:
-				ping_emoji = ping_one["emoji"]
-				break
  
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
