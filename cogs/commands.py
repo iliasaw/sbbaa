@@ -425,6 +425,8 @@ class allсommands(commands.Cog):
 		usage="botnfo [Ничего]")
 	async def __bot(self, ctx):
 		await ctx.message.delete()
+		
+		await ctx.send(f"{ctx.author.mention} Я работаю!")
  
 		guild_count = len(self.bot.guilds)
 		member_count = len(self.bot.users)
