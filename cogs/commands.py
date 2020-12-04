@@ -427,6 +427,7 @@ class allсommands(commands.Cog):
 		await ctx.message.delete()
  
 		guild_count = len(self.bot.guilds)
+		member_count = len(self.bot.users)
  
  
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
@@ -438,7 +439,7 @@ class allсommands(commands.Cog):
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
 		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
 		embed1.add_field(name="    ", value=" ", inline=True)
-		embed1.add_field(name=f'Участников:', value=f"{len(self.bot.users)}", inline=True)  # Создает строку
+		embed1.add_field(name=f'Участников:', value=f"{member_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Сервер Winter:',
