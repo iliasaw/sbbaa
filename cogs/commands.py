@@ -421,7 +421,7 @@ class allсommands(commands.Cog):
 
 	
 
-	@commands.command(aliases=["bot", "бот", "botnfo", "ботинфо"],
+	@commands.command(aliases=["bot", "бот", "botinfo", "ботинфо"],
 		description="Показывет информацию о боте",
 		usage="botnfo [Ничего]")
 	async def __bot(self, ctx):
