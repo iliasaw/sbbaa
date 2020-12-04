@@ -432,8 +432,8 @@ class allсommands(commands.Cog):
 		embed.add_field(name=f'**Самый лучший человек:**', value="<@369886134861561858>", inline=True)  # Создает строку
 		embed.add_field(name=f'**Лицензия:**', value="CC BY-SA-NC", inline=True)  # Создает строку
 		embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=True)  # Создает строку
-		embed1.add_field(name=f'Участников:', value=f"{member_count}", inline=True)
 		embed.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
+		embed.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
 		embed.add_field(name=f'**Сервер Winter:**', value="[Тык](https://discord.gg/jNuEDPHhfX)", inline=True)  # Создает строку
 		embed.set_thumbnail( url = self.bot.user.avatar_url)
 		await ctx.send(embed=embed)
