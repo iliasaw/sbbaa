@@ -3,6 +3,7 @@ import discord
 import time
 from discord.ext import commands
 
+res  = 764776986819821569
 
 # Код
 class Moder(commands.Cog):
@@ -10,19 +11,12 @@ class Moder(commands.Cog):
 		self.bot = bot
 		self._last_member = None
 		self.cog_name = ["Модераторские"]
-		db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
 
 	@commands.command()
 	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def mute(ctx, member: discord.Member, arg: str, *, reason = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.message.delete()
 		now_date = datetime.datetime.now()
 		mute_role = discord.utils.get(ctx.message.guild.roles, name = 'Muted')
@@ -103,6 +97,8 @@ class Moder(commands.Cog):
 	@commands.command(pass_context = True)
 	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def unmute(ctx, member: discord.Member, *, reason = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		mute_role = discord.utils.get(ctx.message.guild.roles, name = 'Muted')
 		if not member and not arg:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Правильное использование команды: `unmute @пользователь причина`', color=0xa400fc))
@@ -128,6 +124,8 @@ class Moder(commands.Cog):
 	@commands.command()
 	@commands.has_any_role(764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
 	async def kick(ctx, member: discord.Member, *, reason = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.message.delete()
 		if not member:
 			return await ctx.send(embed = discord.Embed(description = f'**:warning: Правильное использование команды: `#kick @user причина`', color=0xa400fc))
