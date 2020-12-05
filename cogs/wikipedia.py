@@ -39,8 +39,6 @@ class BotWikipedia(commands.Cog):
         usage="вики <запрос>"
     )
     async def wiki(self, ctx, *, reason):
-        if ctx.author.id == res:
-		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         try:
             wikipedia.set_lang('ru')
             text = wikipedia.summary(f'{reason}', sentences=5)
