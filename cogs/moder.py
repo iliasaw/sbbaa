@@ -10,6 +10,15 @@ class Moder(commands.Cog):
 		self.bot = bot
 		self._last_member = None
 		self.cog_name = ["Модераторские"]
+		db = sqlite3.connect("Marry.db")
+		cursor = db.cursor()
+		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
+		id1 BIGINT
+		)""")
+		db.commit()
+		db.close()
+		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
+		res = cursor.fetchall()
 
 	@commands.command()
 	@commands.has_any_role(764776537588760623, 764776537588760624, 764776537588760625, 764776537600950282, 764776537600950283, 764776537600950284, 764776537600950286, 772079106410020875)
