@@ -62,8 +62,6 @@ class BotWikipedia(commands.Cog):
         usage="события [Ничего]"
     )
     async def news(self, ctx):
-        if ctx.author.id == res:
-		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         wikipedia.set_lang('ru')
         text = wikipedia.summary('Шаблон:Текущие_события_на_заглавной_странице')
         e = discord.Embed(description=text, colour=0xa400fc)
@@ -81,8 +79,6 @@ class BotWikipedia(commands.Cog):
         usage="факты [Ничего]"
     )
     async def facts(self, ctx):
-        if ctx.author.id == res:
-		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         wikipedia.set_lang('ru')
         text = wikipedia.summary('Шаблон:Знаете_ли_вы')
         e = discord.Embed(description=text, colour=0xa400fc)
@@ -98,8 +94,7 @@ class BotWikipedia(commands.Cog):
         usage="изображение [Ничего]"
     )
     async def image(self, ctx):
-        if ctx.author.id == res:
-		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
+
         wikiimage = "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0'}
         # делаем запрос на самом сайте
