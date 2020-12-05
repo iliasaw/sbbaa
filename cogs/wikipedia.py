@@ -17,6 +17,15 @@ class BotWikipedia(commands.Cog):
         self.bot = bot
         self._last_member = None
         self.cog_name = ["wikipedia"]
+        db = sqlite3.connect("Marry.db")
+		cursor = db.cursor()
+		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
+		id1 BIGINT
+		)""")
+		db.commit()
+		db.close()
+		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
+		res = cursor.fetchall()
 
     @commands.command(
         aliases=["сегодня"],
