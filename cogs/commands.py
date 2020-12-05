@@ -326,14 +326,11 @@ class allсommands(commands.Cog):
 		if ctx.author.id == res:
 			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
-
 		user = ctx.message.author if (member == None) else member
 
 		embed = discord.Embed(title=f'Аватар пользователя {user}', color= 0xa400fc)
 
-		embed.set_image(url='https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}.png?size=1024'.format(user))
+		embed.set_image(url=user.avatar_url)
 
 		await ctx.send(embed=embed)
 
