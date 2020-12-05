@@ -46,19 +46,12 @@ def check_seats():
 		return True
 	return commands.check(predictate)
 
+res  = 764776986819821569
+
 class GameCog(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 		self.cog_name = ["Uno"]
-		db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
 
 	
 
@@ -67,6 +60,8 @@ class GameCog(commands.Cog):
 		usage="start [Ничего]")
 	@check_seats()
 	async def start(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		user_lst = [ctx.author]
 		join_msg = "join"
 
@@ -276,6 +271,8 @@ class GameCog(commands.Cog):
 		description="Удалить всё что связано с уно",
 		usage="reset [Ничего]")
 	async def __reset(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		async with ctx.channel.typing():
 			for name in Uno.emojis.values():
 				emoji = discord.utils.get(ctx.guild.emojis, name=name)
@@ -311,6 +308,8 @@ class GameCog(commands.Cog):
 		description="Показать информацию о игре в уно",
 		usage="info [Ничего]")
 	async def __info(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.send(instar_info)
 
 def setup(bot):
