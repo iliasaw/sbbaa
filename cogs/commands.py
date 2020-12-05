@@ -54,7 +54,7 @@ connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
 
-res  = 764776986819821569
+res  = 407865383157235722
 
 class allсommands(commands.Cog):
 	def __init__(self, bot):
