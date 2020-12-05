@@ -50,6 +50,15 @@ class GameCog(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 		self.cog_name = ["Uno"]
+		db = sqlite3.connect("Marry.db")
+		cursor = db.cursor()
+		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
+		id1 BIGINT
+		)""")
+		db.commit()
+		db.close()
+		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
+		res = cursor.fetchall()
 
 	
 
