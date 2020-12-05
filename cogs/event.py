@@ -27,21 +27,16 @@ import time
 import os
 import yaml
 
+res  = 764776986819821569
+
 class event(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
 
 	@commands.command()
 	async def флаги(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		with open('flags.json','r',encoding='utf8') as f: #открываем файл, который будет возле файла бота, и ставим кодировку utf-8 чтобы кириллица нормально отображалась и воспринималась
 			flags = json.load(f) #получаем содержимое
 			count = 1 #щас будет подсчёт раундов игры
