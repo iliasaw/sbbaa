@@ -9,7 +9,7 @@ import sqlite3
 connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
-
+res  = 764776986819821569
 
 class BotWikipedia(commands.Cog):
 
@@ -17,22 +17,12 @@ class BotWikipedia(commands.Cog):
         self.bot = bot
         self._last_member = None
         self.cog_name = ["wikipedia"]
-        db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
-
     @commands.command(
         aliases=["сегодня"],
         description="Показывает события сегодняшнего дня в мировой истории.",
         usage="сегодня [Ничего]")
     async def today(self, ctx):
-        if ctx.author.id == 465390488963514368:
+        if ctx.author.id == res:
             return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
         wikipedia.set_lang('ru')
         text = wikipedia.summary('Шаблон:События дня')
@@ -49,8 +39,8 @@ class BotWikipedia(commands.Cog):
         usage="вики <запрос>"
     )
     async def wiki(self, ctx, *, reason):
-        if ctx.author.id == 465390488963514368:
-            return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+        if ctx.author.id == res:
+		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         try:
             wikipedia.set_lang('ru')
             text = wikipedia.summary(f'{reason}', sentences=5)
@@ -74,8 +64,8 @@ class BotWikipedia(commands.Cog):
         usage="события [Ничего]"
     )
     async def news(self, ctx):
-        if ctx.author.id == 465390488963514368:
-            return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+        if ctx.author.id == res:
+		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         wikipedia.set_lang('ru')
         text = wikipedia.summary('Шаблон:Текущие_события_на_заглавной_странице')
         e = discord.Embed(description=text, colour=0xa400fc)
@@ -93,8 +83,8 @@ class BotWikipedia(commands.Cog):
         usage="факты [Ничего]"
     )
     async def facts(self, ctx):
-        if ctx.author.id == 465390488963514368:
-            return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+        if ctx.author.id == res:
+		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         wikipedia.set_lang('ru')
         text = wikipedia.summary('Шаблон:Знаете_ли_вы')
         e = discord.Embed(description=text, colour=0xa400fc)
@@ -110,8 +100,8 @@ class BotWikipedia(commands.Cog):
         usage="изображение [Ничего]"
     )
     async def image(self, ctx):
-        if ctx.author.id == 465390488963514368:
-            return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+        if ctx.author.id == res:
+		return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
         wikiimage = "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0'}
         # делаем запрос на самом сайте
