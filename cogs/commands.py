@@ -54,21 +54,12 @@ connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
 
-
+res  = 764776986819821569
 
 class allсommands(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 		self.cog_name = ["Commands"]
-		db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
 
 
 	
@@ -76,6 +67,8 @@ class allсommands(commands.Cog):
 
 	@commands.command(aliases=['help', 'хелп'])
 	async def shelp(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		embed = discord.Embed(title='**Помощь**', description='***Навигация по секретным командам :gear:\n () - Обязательные параметры\n [] - Необязательные параметры***\n *P.S: Листай с помощью эмодзи*', color=0xa400fc)
 		embed1 = discord.Embed(title='**Развлечение :balloon:**', description='\n `#ttt (@user)` **- Сыграть с человеком в крестики нолики**\n `#coin` **- Подкинуть монетку**\n `#rand (number1) (number2)` **- Рандомайзер**\n `#caesar (arg)` **- Зашифровать шифром цезаря**\n `#reverse (text)` **- Зазеркалить слово**\n `#rps (arg)` **- Камень Ножницы Бумага**\n'
 			'`#panda` **- Показывет панду**\n `#bird` **- Показывает птичку**\n `#fox` **- Показывает лисичку**\n `#cat` **- Показать котика**\n `#koala` **- Показать коалу**\n `#dog` **- Показать собачку**\n `#invert [@user]` **- Инвертировать**\n `#wasted [@user]` **- Арестовать**\n `#greyscale [@user]` **- Чёрно-Белое**', color=0xa400fc)
@@ -90,9 +83,8 @@ class allсommands(commands.Cog):
 
 	@commands.command(aliases=['арестован'])
 	async def wasted(self, ctx, member : discord.Member = None):
-
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		user = ctx.message.author if (member == None) else member
 
@@ -104,9 +96,8 @@ class allсommands(commands.Cog):
 
 	@commands.command(aliases=['инверт', 'инвертировать'])
 	async def invert(self, ctx, member : discord.Member = None):
-
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		user = ctx.message.author if (member == None) else member
 
@@ -118,9 +109,8 @@ class allсommands(commands.Cog):
 	
 	@commands.command(aliases=['серый'])
 	async def greyscale(self, ctx, member : discord.Member = None):
-
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		user = ctx.message.author if (member == None) else member
 
@@ -132,9 +122,8 @@ class allсommands(commands.Cog):
 
 	@commands.command()
 	async def avatar(self, ctx, member : discord.Member = None):
-
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		user = ctx.message.author if (member == None) else member
 
@@ -150,6 +139,8 @@ class allсommands(commands.Cog):
 
 	@commands.command()
 	async def suggest(self, ctx , * , agr ):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.message.add_reaction('✅')
 		suggest_chanell = self.bot.get_channel( 771809550273085550 ) #Айди канала предложки
 		embed = discord.Embed(title=f"{ctx.author.name} Предложил :", description= f" {agr} \n\n")
@@ -165,6 +156,8 @@ class allсommands(commands.Cog):
 
 	@commands.command()
 	async def password(self, ctx, lenght: int = None, number: int = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		if not lenght or not number:
 			await ctx.send(embed = discord.Embed(description = f'Пожалуйста, укажите длину пароля и количество символов в нем.', color=0xa400fc)) 
@@ -185,6 +178,8 @@ class allсommands(commands.Cog):
 	@commands.command(
 	aliases=['сервер', 'серверинфо'])
 	async def server(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		members = ctx.guild.members
 		bots = len([m for m in members if m.bot])
 		users = len(members) - bots
@@ -223,9 +218,9 @@ class allсommands(commands.Cog):
 		description="Подкинуть монетку",
 		usage="coin [Ничего]")
 	async def __coin(self, ctx ):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
 		coins = [ 'Орёл', 'Решка' ]
 		coins_r = random.choice( coins )
 		coin_win = 'Орёл'
@@ -251,6 +246,8 @@ class allсommands(commands.Cog):
 		description="Рандомайзер",
 		usage="рандом [первое число] [второй число]")
 	async def __randomizer(self, ctx, number1=1, number2=100):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.message.delete()
 		try:
 			if not number1:
@@ -326,6 +323,8 @@ class allсommands(commands.Cog):
 
 	@commands.command()
 	async def avatar(self, ctx, member : discord.Member = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		if ctx.author.id == 719605055547768894:
 			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
@@ -345,6 +344,8 @@ class allсommands(commands.Cog):
 		description="Зашифровать слово с помощью шифра цезаря",
 		usage="caesar [слово]")
 	async def __caesar(self, ctx, arg):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		alfpabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я',
 		 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я']
 		key = int(3)
@@ -375,6 +376,8 @@ class allсommands(commands.Cog):
 		description="Зазеркалить слово",
 		usage="reverse [слова]")
 	async def __reverse(self, ctx, *, arg):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		text = arg[::-1]
 
 		await ctx.send(embed = discord.Embed(description= f'**Ваше слова(-о):** `{text}`', color = 0xa400fc))
@@ -384,11 +387,15 @@ class allсommands(commands.Cog):
 		description="Зазеркалить слово",
 		usage="chatbot [слова]")
 	async def __chatbot(self, ctx, *, arg):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		r = requests.get("https://some-random-api.ml/chatbot", params = {"message": arg})
 		await ctx.send(json.loads(r.text)["response"])
 
 	@commands.command(aliases=['calculator'])
 	async def calc(self, ctx, *,exp = None):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		if exp is None:
 			await ctx.send('**Укажите пример!**')
 		else:
@@ -409,6 +416,8 @@ class allсommands(commands.Cog):
 
 	@commands.command()
 	async def user(self, ctx, member: discord.Member = None ):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 
 		user = ctx.message.author if (member == None) else member
 
@@ -433,6 +442,8 @@ class allсommands(commands.Cog):
 		
 	@commands.command(aliases=["bot", "botinfo", "ботинфо"])
 	async def _bot(self, ctx):
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		await ctx.message.delete()
  
 		members_count = 0
@@ -503,8 +514,8 @@ class allсommands(commands.Cog):
 		description="Камень, ножницы, бумага",
 		usage="rps [Камень, ножницы, бумага]")
 	async def __rps(self, ctx, *, mess):
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		robot = ['Камень', 'Ножницы', 'Бумага']
 		if mess == "Камень" or mess == "К" or mess == "камень" or mess == "к":
 			robot_choice = random.choice(robot)
