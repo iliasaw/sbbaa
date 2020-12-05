@@ -16,7 +16,7 @@ currentturn = {}
 connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
-
+res  = 764776986819821569
 
 def get_colour():
 	return random.randint(0, 0xffffff)
@@ -24,25 +24,14 @@ class tictactoe(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 		self.cog_name = ["Ttt"]
-		db = sqlite3.connect("Marry.db")
-		cursor = db.cursor()
-		cursor.execute("""CREATE TABLE IF NOT EXISTS marrys(
-		id1 BIGINT
-		)""")
-		db.commit()
-		db.close()
-		cursor.execute(f"SELECT * FROM marrys WHERE id1='{ctx.message.author.id}'")
-		res = cursor.fetchall()
 
 	@commands.command(
 		aliases=["ttt", "крестики-нолики"],
 		description="Сыграть в крестики нолики",
 		usage="ttt [Ничего]")
 	async def __ttt(self, ctx, opponent : discord.Member):
-		if ctx.author.id == 465390488963514368:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
-		if ctx.author.id == 719605055547768894:
-			return await ctx.send(embed = discord.Embed(description = f'**Ты не можешь использовать эту команду**', color=0xa400fc))
+		if ctx.author.id == res:
+			return await ctx.send(f"{ctx.author.mention} Вы в чёрном списке")
 		if ctx.author.bot is True:
 			pass
 		else:
