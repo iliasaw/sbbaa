@@ -371,7 +371,7 @@ class allсommands(commands.Cog):
 		await ctx.send(embed = discord.Embed(description= f'**Ваше слова(-о):** `{text}`', color = 0xa400fc))
 
 	@commands.command(
-		aliases=["chatbot", "чатбот","чат","чат"],
+		aliases=["chatbot", "чатбот","чат","chat"],
 		description="Зазеркалить слово",
 		usage="chatbot [слова]")
 	async def __chatbot(self, ctx, *, arg):
