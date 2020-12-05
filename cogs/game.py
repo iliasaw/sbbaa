@@ -46,7 +46,7 @@ def check_seats():
 		return True
 	return commands.check(predictate)
 
-res  = 764776986819821569
+res  = 407865383157235722
 
 class GameCog(commands.Cog):
 	def __init__(self, bot):
