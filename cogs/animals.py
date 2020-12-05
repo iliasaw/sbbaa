@@ -15,7 +15,7 @@ def get_lang(guild, ru_text:str, en_text:str):
 	else:
 		return en_text
 
-res  = 764776986819821569
+res  = 407865383157235722
 	
 class animals(commands.Cog):
 	def __init__(self, bot):
