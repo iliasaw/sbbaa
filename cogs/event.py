@@ -27,7 +27,7 @@ import time
 import os
 import yaml
 
-res  = 407865383157235722
+res  = 684724479209111563
 
 class event(commands.Cog):
 	def __init__(self, bot):
