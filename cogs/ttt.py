@@ -16,7 +16,7 @@ currentturn = {}
 connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
-res  = 407865383157235722
+res  = 684724479209111563
 
 def get_colour():
 	return random.randint(0, 0xffffff)
