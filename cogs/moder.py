@@ -3,7 +3,7 @@ import discord
 import time
 from discord.ext import commands
 
-res  = 407865383157235722
+res  = 684724479209111563
 
 # Код
 class Moder(commands.Cog):
