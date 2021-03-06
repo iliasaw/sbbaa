@@ -456,15 +456,15 @@ class allсommands(commands.Cog):
 		embed1 = discord.Embed(title=f"{self.bot.user.name}#{self.bot.user.discriminator}",
 							   description="Информация о боте **WinterBpt**.\nБот был написан для сервера Winter!",
 							   color=0xa400fc)
-		embed1.add_field(name=f'Бота создал:', value="<@764776986819821569>", inline=True)  # Создает строку
-		embed1.add_field(name=f'Самый Лучший Человек:', value="<@369886134861561858>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Бота создал:', value="<@342317507991961602>", inline=True)  # Создает строку
+		embed1.add_field(name=f'Самый Лучший Человек:', value="<@744622042829029456>", inline=True)  # Создает строку
 		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
 		embed1.add_field(name=f'Бот написан на:', value="Discord.py", inline=True)  # Создает строку
 		embed1.add_field(name=f'Лицензия:', value="CC BY-SA-NC", inline=True)  # Создает строку
 		embed1.add_field(name="‎‎‎‎", value="‎", inline=True)
 		embed1.add_field(name=f'Серверов:', value=f"{guild_count}", inline=True)  # Создает строку
 		embed1.add_field(name=f'Шардов:', value=f"{self.bot.shard_count}", inline=True)  # Создает строку
-		embed1.add_field(name=f'Сервер Winter:', value="[Тык](https://discord.gg/jNuEDPHhfX)",
+		embed1.add_field(name=f'Сервер Splash:', value="[Тык](https://discord.com/invite/gBqEtNA)",
 						 inline=True)  # Создает строку
 		embed1.set_thumbnail(url=self.bot.user.avatar_url)
  
