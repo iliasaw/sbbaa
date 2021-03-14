@@ -69,7 +69,7 @@ async def on_ready():
 
 @bot.event
 async def is_owner(ctx):
-	return ctx.author.id == 764776986819821569
+	return ctx.author.id == 342317507991961602
 	# Айди создателя бота
 
 
