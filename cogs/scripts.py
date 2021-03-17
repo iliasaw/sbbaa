@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 from Cybernator import Paginator
+import json
+import requests
 
 
 class scripts(commands.Cog):
