@@ -135,7 +135,11 @@ class scripts(commands.Cog):
 		scripts = self.bot.get_channel(688458452313571348)
 		
 		
-		embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```', color=0xa400fc)
+		embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData.text}```', color=0xa400fc)
+		await scripts.send(embed=embed)
+		embed = discord.Embed(title="RobloxGameClient", color=0x43B581)
+		embed.add_field(name="RobloxGameClient Version", value="```\n" + newData.text + "\n```", inline=False)
+		embed.add_field(name="New RobloxGameClient Version", value="```\n" + newData.text+"\n```", inline=True)
 		await scripts.send(embed=embed)
 
 
