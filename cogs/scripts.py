@@ -126,6 +126,15 @@ class scripts(commands.Cog):
 			await scripts.send(embed=emb)
 		if amount == '3':
 			await scripts.send(embed=embedd)
+	
+	@commands.command()
+	async def update(self, ctx):
+		newData = requests.get('http://setup.roblox.com/version')
+		scripts = self.bot.get_channel(688458452313571348)
+		
+		
+		embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```', color=0xa400fc)
+		await scripts.send(embed=embed)
 
 
 
