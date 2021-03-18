@@ -115,7 +115,7 @@ class scripts(commands.Cog):
 	async def snews(self, ctx, amount, *, reason):
 			
 
-		scripts = self.bot.get_channel(728496532529217558)
+		scripts = self.bot.get_channel(688458452317765645)
 		
 		
 		embed = discord.Embed(description=f'```fix\n Обновление скрипта```\n\n **Был переделан скрипт на игру:** `{reason}`', color=0xa400fc)
