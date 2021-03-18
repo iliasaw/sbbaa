@@ -133,11 +133,10 @@ class scripts(commands.Cog):
 	async def update(self, ctx):
 		nes = requests.get('http://setup.roblox.com/version')
 		newData = 'version-c52bceabee8f40e5'
-		scripts = self.bot.get_channel(688458452313571348)
 
 
 		embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n version-c52bceabee8f40e5```', color=0xa400fc)
-		await scripts.send(embed=embed)
+		await ctx.send(embed=embed)
 
 
 
