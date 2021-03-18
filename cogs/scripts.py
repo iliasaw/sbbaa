@@ -131,8 +131,10 @@ class scripts(commands.Cog):
 	
 	@commands.command()
 	async def update(self, ctx):
-		newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
-		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
+		#newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
+		#oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
+		newData = 'version-c52bceabee8f40e5' # https://pastebin.com/9zCieekb
+		oldData = 'version-5c383cf6549b4c50' # https://pastebin.com/kuP3Er90
 
 
 		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
