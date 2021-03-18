@@ -131,12 +131,12 @@ class scripts(commands.Cog):
 	
 	@commands.command()
 	async def update(self, ctx):
-		newData = requests.get('http://setup.roblox.com/version')
+		nes = requests.get('http://setup.roblox.com/version')
+		newData = 'version-c52bceabee8f40e5'
 		scripts = self.bot.get_channel(688458452313571348)
-		
-		embed = discord.Embed(title="RobloxGameClient", color=0x43B581)
-		embed.add_field(name="RobloxGameClient Version", value="```\n" + newData.text + "\n```", inline=False)
-		embed.add_field(name="New RobloxGameClient Version", value="```\n" + newData.text+"\n```", inline=True)
+
+
+		embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```', color=0xa400fc)
 		await scripts.send(embed=embed)
 
 
