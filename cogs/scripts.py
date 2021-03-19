@@ -4,6 +4,7 @@ from Cybernator import Paginator
 import json
 import requests
 
+сссс = 714095714480816129
 
 class scripts(commands.Cog):
 
@@ -27,6 +28,7 @@ class scripts(commands.Cog):
 		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
 		#newData = 'ждём' # https://pastebin.com/9zCieekb
 		#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
+		ссс = self.bot.get_channel(сссс)
 
 
 		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
@@ -34,7 +36,7 @@ class scripts(commands.Cog):
 		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
 		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
 		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
-		await ctx.send(embed=embed1)
+		await ссс.send(embed=embed1)
 
 
 
