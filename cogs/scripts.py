@@ -14,6 +14,47 @@ class scripts(commands.Cog):
 	async def is_owner(ctx):
 		return ctx.author.id == 342317507991961602
 	 # Айди создателя бота
+	
+	@commands.Cog.listener()
+	async def on_ready(ctx):
+		print("Проверка обновы начата")
+		await robloxgameclient_loop.start()
+	
+	
+	
+	@tasks.loop(seconds=10)
+	async def robloxgameclient_loop(self):
+		newData = requests.get('http://setup.roblox.com/version') # https://pastebin.com/9zCieekb
+		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
+		#newData = 'ждём' # https://pastebin.com/9zCieekb
+		#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
+		channel = self.bot.get_channel(714095714480816129)
+		
+		if newData.text in oldData.text:
+			print("[ERROR] ( [X] ) Нету новой версии роблокса!")
+		if newData.text not in oldData.text:
+			#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
+			#await ctx.send(embed=embed)
+			embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
+			embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
+			embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
+			await channel.send(embed=embed1)
+	
+	@commands.command()
+	async def update(self, ctx):
+		await ctx.message.delete()
+		newData = requests.get('http://setup.roblox.com/version') # https://pastebin.com/9zCieekb
+		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
+		#newData = 'ждём' # https://pastebin.com/9zCieekb
+		#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
+
+
+		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
+		#await ctx.send(embed=embed)
+		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
+		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
+		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
+		await ctx.send(embed=embed1)
 
 
 
@@ -128,22 +169,6 @@ class scripts(commands.Cog):
 			await scripts.send(embed=emb)
 		if amount == '3':
 			await scripts.send(embed=embedd)
-	
-	@commands.command()
-	async def update(self, ctx):
-		await ctx.message.delete()
-		newData = requests.get('http://setup.roblox.com/version') # https://pastebin.com/9zCieekb
-		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
-		#newData = 'ждём' # https://pastebin.com/9zCieekb
-		#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
-
-
-		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
-		#await ctx.send(embed=embed)
-		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
-		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
-		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
-		await ctx.send(embed=embed1)
 
 
 
@@ -153,6 +178,10 @@ class scripts(commands.Cog):
 			await ctx.send(embed=discord.Embed(description=f'**Команда не найдена**', color=0xa400fc))
 		if isinstance(error, discord.ext.commands.errors.MissingRequiredArgument):
 			await ctx.send(embed=discord.Embed(description='**Не правильно введена команда.\nЧтобы узнать как вводить команду #help**', color=0xa400fc))
+	
+	@robloxgameclient_loop.before_loop
+	async def before_some_task(self):
+		await self.bot.wait_until_ready()
 
 def setup(bot):
 	bot.add_cog(scripts(bot))
