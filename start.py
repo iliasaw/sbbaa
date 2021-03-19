@@ -77,9 +77,9 @@ async def robloxgameclient_loop():
 	#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
 	channel = bot.get_channel(714095714480816129)
 		
-	if newData.text in oldData.text:
+	if newData.text == oldData.text:
 		print("[ERROR] ( [X] ) Нету новой версии роблокса!")
-	if newData.text not in oldData.text:
+	if newData.text != oldData.text:
 		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
 		#await ctx.send(embed=embed)
 		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
