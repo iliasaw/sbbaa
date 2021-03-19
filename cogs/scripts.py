@@ -132,17 +132,17 @@ class scripts(commands.Cog):
 	@commands.command()
 	async def update(self, ctx):
 		await ctx.message.delete()
-		#newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
-		#oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
-		newData = 'ждём' # https://pastebin.com/9zCieekb
-		oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
+		newData = requests.get('http://setup.roblox.com/version') # https://pastebin.com/9zCieekb
+		oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
+		#newData = 'ждём' # https://pastebin.com/9zCieekb
+		#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
 
 
 		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
 		#await ctx.send(embed=embed)
 		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
-		embed1.add_field(name=f'Новая Версия:', value=f'`{newData}`', inline=True)
-		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData}`', inline=True)
+		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
+		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
 		await ctx.send(embed=embed1)
 
 
