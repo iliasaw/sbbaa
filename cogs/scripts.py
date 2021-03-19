@@ -33,7 +33,7 @@ class scripts(commands.Cog):
 
 		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
 		#await ctx.send(embed=embed)
-		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
+		embed1 = discord.Embed(title=f"Splash", description="Было обнаружено обновление Roblox'a, следовательно API в Splash временно не работают.", color=0xa400fc)
 		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
 		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
 		await ссс.send(embed=embed1)
