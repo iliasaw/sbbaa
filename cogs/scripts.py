@@ -131,6 +131,7 @@ class scripts(commands.Cog):
 	
 	@commands.command()
 	async def update(self, ctx):
+		await ctx.message.delete()
 		#newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
 		#oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
 		newData = 'version-c52bceabee8f40e5' # https://pastebin.com/9zCieekb
