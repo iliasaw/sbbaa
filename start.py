@@ -69,13 +69,15 @@ async def on_ready():
 		await asyncio.sleep(5)
 	await robloxgameclient_loop.start()
 
+ccc = 714095714480816129
+
 @tasks.loop(seconds=10)
 async def robloxgameclient_loop():
 	newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
 	oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
 	#newData = 'ждём' # https://pastebin.com/9zCieekb
 	#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
-	channel = bot.get_channel(714095714480816129)
+	channel = bot.get_channel(ccc)
 		
 	if newData.text == oldData.text:
 		print("[ERROR] ( [X] ) Нету новой версии роблокса!")
