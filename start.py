@@ -71,7 +71,7 @@ async def on_ready():
 
 @tasks.loop(seconds=10)
 async def robloxgameclient_loop():
-	newData = requests.get('http://setup.roblox.com/version') # https://pastebin.com/9zCieekb
+	newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
 	oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
 	#newData = 'ждём' # https://pastebin.com/9zCieekb
 	#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
