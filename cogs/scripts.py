@@ -4,7 +4,8 @@ from Cybernator import Paginator
 import json
 import requests
 
-сссс = 714095714480816129
+сссс = 764776537714720806
+
 
 class scripts(commands.Cog):
 
