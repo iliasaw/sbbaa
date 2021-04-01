@@ -230,7 +230,7 @@ class allсommands(commands.Cog):
 		coin_win = 'Орёл'
 
 		if coins_r == coin_win:
-			if ctx.author.id == 764776986819821569:
+			if ctx.author.id == 342317507991961602:
 				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
 					Тебе повезло у тебя: **`Орёл`**''', color = 0xa400fc))
 			else:
@@ -238,7 +238,7 @@ class allсommands(commands.Cog):
 					Тебе повезло у тебя: **`{ coins_r }`**''', color = 0xa400fc))
 
 		if coins_r != coin_win:
-			if ctx.author.id == 764776986819821569:
+			if ctx.author.id == 342317507991961602:
 				await ctx.send(embed = discord.Embed(description= f''':tada: {ctx.author.mention}, выиграл! 
 					Тебе повезло у тебя: **`Орёл`**''', color = 0xa400fc))
 			else:
