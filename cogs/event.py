@@ -62,7 +62,6 @@ class event(commands.Cog):
 	
 
 	@commands.command(aliases = ['g'])
-	@commands.has_any_role(764776537600950286)
 	async def giveaway( self, ctx, seconds: int, *, text ):
 		def time_end_form( seconds ):
 			h = seconds//3600
