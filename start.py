@@ -71,31 +71,13 @@ async def on_ready():
 
 ccc = 714095714480816129
 
-@tasks.loop(seconds=10)
-async def robloxgameclient_loop():
-	newData = requests.get('https://pastebin.com/raw/9zCieekb') # https://pastebin.com/9zCieekb
-	oldData = requests.get('https://pastebin.com/raw/kuP3Er90') # https://pastebin.com/kuP3Er90
-	#newData = 'ждём' # https://pastebin.com/9zCieekb
-	#oldData = 'version-c52bceabee8f40e5' # https://pastebin.com/kuP3Er90
-	channel = bot.get_channel(ccc)
-		
-	if newData.text == oldData.text:
-		print("[ERROR] ( [X] ) Нету новой версии роблокса!")
-	if newData.text != oldData.text:
-		#embed = discord.Embed(description=f'```fix\n Обновление облокса```\n\n **Был обновлён роблокс. Новая версия:**\n ```yaml\n{newData}```\n', color=0xa400fc)
-		#await ctx.send(embed=embed)
-		embed1 = discord.Embed(title=f"Splash", description="SplashBot обнаружил обновление роблокса, подождите пока обновят длл", color=0xa400fc)
-		embed1.add_field(name=f'Новая Версия:', value=f'`{newData.text}`', inline=True)
-		embed1.add_field(name=f'Старая Версия:', value=f'`{oldData.text}`', inline=True)
-		await channel.send(embed=embed1)
-
 @robloxgameclient_loop.before_loop
 async def before_some_task():
   await bot.wait_until_ready()
 
 @bot.event
 async def is_owner(ctx):
-	return ctx.author.id == 342317507991961602
+	return ctx.author.id == 833957508979752960
 	# Айди создателя бота
 
 
