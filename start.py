@@ -71,9 +71,6 @@ async def on_ready():
 
 ccc = 714095714480816129
 
-@robloxgameclient_loop.before_loop
-async def before_some_task():
-  await bot.wait_until_ready()
 
 @bot.event
 async def is_owner(ctx):
