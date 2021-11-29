@@ -61,9 +61,9 @@ translator = Translator()
 async def on_ready():
 	print("УСЁ")
 	while True:
-		await bot.change_presence(status = discord.Status.dnd, activity = discord.Game(f'в Roblox'))
+		await bot.change_presence(status = discord.Status.dnd, activity = discord.Game(f'в WarThunder'))
 		await asyncio.sleep(5)
-		await bot.change_presence(status = discord.Status.dnd, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером Splash | Узнать комманды: #help"))
+		await bot.change_presence(status = discord.Status.dnd, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером CumThunder | Узнать комманды: #help"))
 		await asyncio.sleep(5)
 		await bot.change_presence(status = discord.Status.dnd, activity = discord.Activity(type = discord.ActivityType.listening, name = f"за разговорами {len(bot.users)} игроков"))
 		await asyncio.sleep(5)
