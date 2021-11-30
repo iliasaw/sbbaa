@@ -154,17 +154,9 @@ class scripts(commands.Cog):
 			await scripts.send(embed=embedd)
 	
 	@commands.command()
-	async def sayemb(self, ctx, text, amount, *, descript):
+	async def sayemb(self, ctx, text, *, descript):
 		embed = discord.Embed(title=f"***{text}***", description=f"**{descript}**", color=0xa400fc)
-		emb = discord.Embed(title=f"***Ошибка***", description=f"**Напиште цифру 1 или 2**", color=0xa400fc)
-		msg = "@everyone"
-
-		if amount == "1":
-			await ctx.send(embed=embed)
-		if amount == "2":
-			await ctx.send(msg=msg, embed=embed)
-		else:
-			await ctx.author.send(embed=emb)
+		await ctx.send(embed=embed)
 
 
 	@commands.Cog.listener()
