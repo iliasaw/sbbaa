@@ -59,6 +59,46 @@ class event(commands.Cog):
 					e = discord.Embed(title = "**Конец игры!**", description = f"**Ивент был проведён {ctx.author.mention}, и мы всем желаем удачи! Спасибо за участие!**\n ||Подождите когда пройдёт подсчёт баллов||", color=0xa400fc)
 					await ctx.send(embed = e)
 
+	@commands.command(aliases = ['n'])
+	async def newyear( self, ctx, seconds: int,):
+		def time_end_form( seconds ):
+			h = seconds//3600
+			m = (seconds - h*3600)//60
+			s = seconds%60
+			if h < 10:
+				h = f"0{h}"
+			if m < 10:
+				m = f"0{m}"
+			if s < 10:
+				s = f"0{s}"
+			time_reward = f"{h} : {m} : {s}"
+			return time_reward
+ 
+		author = ctx.message.author
+		time_end = time_end_form(seconds)
+		msgs = '@everyone'
+		message = await ctx.send(embed = discord.Embed(
+			description = f"**Новый год:\nnНачнётся через: `{time_end}`.**",
+			colour = 0xa400fc), content=msgs)
+		while seconds > -1:
+			time_end = time_end_form(seconds)
+			text_message = discord.Embed(
+				description = f"**Новый год:\nНачнётся через: `{time_end}`.**",
+				colour = 0xa400fc)
+			await message.edit(embed = text_message)
+			await asyncio.sleep(1)
+			seconds -= 1
+			if seconds < -1:
+				break
+		channel = message.channel
+		message_id = message.id
+		message = await channel.fetch_message(message_id)
+		
+		win = discord.Embed(
+			description = f'**Новый год начался. Всех с НОВЫМ ГОДОМ 2020.**',
+			colour = 0xa400fc)
+		await message.edit(embed = win, content=msgs)
+
 	
 
 	@commands.command(aliases = ['g'])
